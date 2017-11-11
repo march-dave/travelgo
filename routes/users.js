@@ -20,8 +20,6 @@ router.get('/', function(req, res, next) {
 
         res.send(body);
     });
-
-
 });
 
 module.exports = router;
