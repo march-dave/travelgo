@@ -10,6 +10,26 @@ router.get('/:query/i/:international', function(req, res) {
     // var obj = JSON.parse(res).data;
 
     res.send(req.params.query + " : " + req.params.international);
+    // qs: { q: 'The best ski', l: 'US' }
+
+    var q2 = req.params.query;
+    var l2 = req.params.international;
+
+    var options = {
+        method: 'GET',
+        url: 'http://trv-ps-prod.eu-west-1.elasticbeanstalk.com/v1/interpretations',
+        qs: { q: q2, l: l2 }
+    };
+
+    request(options, function(error, response, body) {
+        if (error) throw new Error(error);
+
+        console.log(body);
+
+        res.send(body);
+    });
+
+
 });
 
 module.exports = router;
