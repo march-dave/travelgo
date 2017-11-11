@@ -8,6 +8,7 @@ router.get('/:query/i/:international', function(req, res) {
     // });
 
     // var obj = JSON.parse(res).data;
+    // trivago/The best ski/i/us
 
     res.send(req.params.query + " : " + req.params.international);
     // qs: { q: 'The best ski', l: 'US' }
@@ -21,13 +22,13 @@ router.get('/:query/i/:international', function(req, res) {
         qs: { q: q2, l: l2 }
     };
 
-    request(options, function(error, response, body) {
-        if (error) throw new Error(error);
+    // request(options, function(error, response, body) {
+    //     if (error) throw new Error(error);
 
-        console.log(body);
+    //     console.log(body);
 
-        res.send(body);
-    });
+    //     res.send(body);
+    // });
 
 
 });
