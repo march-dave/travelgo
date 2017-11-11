@@ -3,7 +3,7 @@
 
 <head>
     <title>
-        <%= title %>
+
     </title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -11,19 +11,26 @@
 
 <body>
     <div class="container">
+
+        <!-- <form class="form-signin" method="GET" action="https://hackathontravelgo.herokuapp.com/trivago/ski/l/us">
+            <h2 class="form-signin-heading">Asking Form</h2>
+            <input class="form-control" type="text" name="q" placeholder="Query">
+            <input class="form-control" type="text" name="l" placeholder="Country">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Ask me</button>
+        </form> -->
         <div class="">
             <div class="form-area">
-                <form role="form">
-                    <br style="clear:both">
+                <form role="form" method="GET" action="https://hackathontravelgo.herokuapp.com/trivago/ski/l/us">
+                    <!-- <br style="clear:both"> -->
                     <h3 style="margin-bottom: 25px; text-align: center;">Asking Form</h3>
                     <div class="form-group">
                         <input type="text" class="form-control" id="q" name="q" placeholder="Query" required>
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" id="i" name="i" placeholder="Country" required>
+                        <input type="text" class="form-control" id="l" name="l" placeholder="Country" required>
                     </div>
 
-                    <button type="button" id="submit" name="submit" class="btn btn-primary pull-right">Ask Me</button>
+                    <button id="submit" name="submit" class="btn btn-primary pull-right" type="submit">Ask Me</button>
                 </form>
             </div>
         </div>
