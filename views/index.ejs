@@ -3,9 +3,7 @@
 
 <head>
 
-    <title>
-
-    </title>
+    <title></title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
@@ -48,16 +46,6 @@
         </div>
     </div>
 
-
-
-    <p id="demo">
-        https://www.trivago.de/?cpt=132400,70156102
-    </p>
-
-    <script>
-        // document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
-    </script>
-
     <script language="javascript" type="text/javascript">
         $("form").submit(function() {
             $.ajax({
@@ -66,13 +54,9 @@
                 dataType: 'json',
                 data: $('form').serialize(),
                 success: function(data) {
-
-                    var obj = JSON.parse(data);
-
-                    // $("demo").append(obj);
-
-                    alert(obj);
-                    // console.log(data);
+                    // Not completed yet    
+                    // var obj = JSON.parse(data);
+                    // alert(obj);
                 }
             });
         });
