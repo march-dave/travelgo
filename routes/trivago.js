@@ -34,24 +34,25 @@ router.get('/', function(req, res) {
     // res.send(req.params.query + " : " + req.params.international);
     // qs: { q: 'The best ski', l: 'US' }
 
-    var q2 = req.params.qr;
-    var l2 = req.params.l;
+    // var q2 = req.params.qr;
+    // var l2 = req.params.l;
 
-    // req.query.color
+    // res.send(req.query.qr + " : " + req.query.l);
 
-    res.send(req.query.qr + " : " + req.query.l);
+    var options = {
+        method: 'GET',
+        url: 'http://trv-ps-prod.eu-west-1.elasticbeanstalk.com/v1/interpretations',
+        qs: { q: req.query.qr, l: req.query.l, format: 'json' }
+    };
 
-    // var options = {
-    //     method: 'GET',
-    //     url: 'http://trv-ps-prod.eu-west-1.elasticbeanstalk.com/v1/interpretations',
-    //     qs: { q: req.params.query, l: req.params.international, format: 'json' }
-    // };
+    request(options, function(error, response, body) {
+        if (error) throw new Error(error);
 
-    // request(options, function(error, response, body) {
-    //     if (error) throw new Error(error);
 
-    //     res.send(body);
-    // });
+        var obj = JSON.parse(body);
+
+        res.send(obj);
+    });
 
 
 });

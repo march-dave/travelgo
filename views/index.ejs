@@ -2,20 +2,20 @@
 <html>
 
 <head>
+
     <title>
 
     </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 </head>
-
-<!-- <form role="form" method="GET" action="https://hackathontravelgo.herokuapp.com/trivago/ski/l/us"> -->
 
 <body>
     <div class="container">
         <div class="">
             <div class="form-area">
-                <form role="form" method="GET" action="http://localhost:3000/trivago">
+                <form role="form" method="GET" action="https://hackathontravelgo.herokuapp.com/trivago">
                     <br style="clear:both">
                     <h3 style="margin-bottom: 25px; text-align: center;">Asking Form</h3>
                     <div class="form-group">
@@ -25,11 +25,39 @@
                         <input type="text" class="form-control" id="l" name="l" placeholder="Country" required>
                     </div>
 
-                    <button class="btn btn-primary pull-right" type="submit">Ask Me</button>
+                    <button class="btn btn-primary pull-right" type="submit" id="sbtn">Ask Me</button>
                 </form>
             </div>
         </div>
     </div>
+
+
+
+    <p id="demo"></p>
+
+    <script>
+        // document.getElementById("demo").innerHTML = obj.name + ", " + obj.age;
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        $("form").submit(function() {
+            $.ajax({
+                url: 'https://hackathontravelgo.herokuapp.com/trivago',
+                type: 'get',
+                dataType: 'json',
+                data: $('form').serialize(),
+                success: function(data) {
+
+                    var obj = JSON.parse(data);
+
+                    // $("demo").append(obj);
+
+                    alert(obj);
+                    // console.log(data);
+                }
+            });
+        });
+    </script>
 
 </body>
 
