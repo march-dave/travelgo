@@ -49,9 +49,9 @@ router.get('/', function(req, res) {
         if (error) throw new Error(error);
 
 
-        var obj = JSON.parse(body);
+        // var obj = JSON.parse(body);
 
-        res.send(obj);
+        res.send(body);
     });
 
 
